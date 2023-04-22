@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+    <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+    <link rel="website icon" type="png" href="Vacour.png">
+    <title>Selamat Hari Raya Idul Fitri</title>
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- AUDIO -->
+    <audio src="DJ MARHABAN YA RAMADHAN VIRALTIKTOK-Risky Chici Remix.mp3" id="linkmp3" class="sembunyi"></audio>
+   
+   <div id="bodyblur">
+     <!-- Wallpaper --><img src="nightocean.jpg" id="wallpaper"/><div id="beneranblur"></div>
+   </div>
+   
+   <div id='Content'>
+
+     <div id="kadoIn">
+       <!-- Tombol Surat --><img src="https://feeldreams.github.io/kadoin.png"/>
+     </div>
+     <p id="ket">Klik Kadonya!</p>
+
+     <div class="kumpulanstiker">
+         <!-- Stiker untuk Konten -->
+         <img src="https://feeldreams.github.io/emawh.gif" id="fotostiker"/>        
+         <img src="https://feeldreams.github.io/bunga.gif" id="fotostiker1"/>
+         <img src="https://feeldreams.github.io/ngumpet.gif" id="fotostiker2"/>
+         <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker3"/>
+         <img src="https://feeldreams.github.io/pandakuning.gif" id="fotostiker4"/>
+         <img src="https://feeldreams.github.io/mikir.gif" id="fotostiker5"/>
+         <img src="https://feeldreams.github.io/pusn.gif" id="fotostiker6"/>
+         <img src="https://feeldreams.github.io/weee.gif" id="fotostiker7"/>
+     </div>
+     
+     <p id="halo" class="halo">Sekian ✨</p>
+     
+     <div><blockquote id='bq' data-text='&#9829;'>
+       <p id="kalimat">Yeaayy! Selamat Hari Raya Idul Fitri! Vanza dan keluarga mengucapkan Minal Aidzin Walfaidzin Mohon Maaf Lahir Dan Batin</p>
+       <p id="kalimatb">Balas pesan ke WhatsApp aku ya! 👉🏻👈🏻</p>
+     </blockquote></div>
+
+     <!-- Tombol Kirim Pesan -->
+     <div id="Tombol"><a id="By">&#128140; Balas</a></div>
+
+   </div>
+
+<!-- Jangan Edit Bagian Ini -->
+<script>
+  async function inipesan(){
+    var { value: nama } = await swals.fire({
+           title: 'Masukin Nama Kamu', input: 'text',
+       });
+       if(nama && nama.length < 11){
+         window.nama = nama;
+         await swalst.fire({title: 'Hai, ' + nama + '! ❤️', imageUrl: '' + fotostiker1.src,});
+         await swalst.fire({title: 'Minta Waktunya Sebentar ya!', imageUrl: '' + fotostiker2.src,});
+         await swalst.fire({title: 'Ga Kerasa ya Hari ini Udah Lebaran🤗 '})
+         await swalst.fire({title: 'Gimana Nih Puasa di Bulan ini?Ada yg bolong ga nih😄'})
+
+         pilihjawaban();
+         } else {
+           await swals.fire('Ups!', 'Nama tidak boleh kosong atau lebih dari 10 karakter, ya!');inipesan();
+    }
+  }
+
+  async function pilihjawaban(){
+  //Variable Pemilihan Warna
+  var inijawaban1 = "Full dong🤪";
+  var inijawaban2 = "Banyak yg bolongnya😭";
+  
+  var { isConfirmed: jawaban } = await swals.fire({
+  title: nama + ' coba jawab dong',
+  text: 'Ayo, jangan ragu-ragu 😆',
+  imageUrl: '' + fotostiker3.src,
+  showCancelButton: true,
+  confirmButtonText: '' + inijawaban1,
+  cancelButtonText: '' + inijawaban2,
+});
+if(jawaban){
+    await swals.fire({title: 'Yeayy!', text: 'Kalo kamu pilih ' + inijawaban1 + ' berarti kamu hebat 🥰!', imageUrl: '' + fotostiker4.src,});
+    var { isConfirmed: jawaban2 } = await swals.fire({
+    title: nama + ' yakin pilih jawaban ' + inijawaban1 + '?', 
+    text: 'Atau mau ganti jawaban aja nih?', 
+    imageUrl: '' + fotostiker5.src,
+    showCancelButton: true,
+    confirmButtonText: 'Yakin',
+    cancelButtonText: 'Ganti',
+});
+if(jawaban2){
+    await swals.fire({title: 'Oke!', text: 'Sekarang lihat ini ya 😄❤️', imageUrl: '' + fotostiker6.src,});
+    mulainama();
+  } else {
+    await swals.fire({title: 'Oke, memilih ' + inijawaban2 + '!', text: 'Yahh, Gimana si katanya puasanya full  😜', imageUrl: '' + fotostiker7.src,});
+    mulainama();
+}
+//Selingan
+  } else {
+    await swals.fire({title: 'Yahh!', text: 'Kalo kamu pilih ' + inijawaban2 + ' lain kali kalo puasa jangan suka mampir ke warteg ya 🤣!', imageUrl: '' + fotostiker4.src,});
+    var { isConfirmed: jawaban2 } = await swals.fire({
+    title: nama + ' yakin pilih jawaban ' + inijawaban2 + '?',  
+    text: 'Atau mau ganti jawaban aja nih?', 
+    imageUrl: '' + fotostiker5.src,
+    showCancelButton: true,
+    confirmButtonText: 'Ganti',
+    cancelButtonText: 'Yakin',
+});
+if(jawaban2){    
+    await swals.fire({title: 'Oke, memilih ' + inijawaban1 + '!', text: 'Inget ya! kalo lagi puasa itu jangan mampir ke warteg 😜', imageUrl: '' + fotostiker7.src,});
+    mulainama();
+  } else {
+    await swals.fire({title: 'Oke!', text: 'Sekarang lihat ini ya 😄❤️', imageUrl: '' + fotostiker6.src,});
+    mulainama();
+}
+}
+}
+  inikuis=0;ftganti=0;flag=1;flagg=1;fungsi=0;ftfungsi=0;fungsiAwal=0;fungsitimer=0;vketikhalo=halo.innerHTML;halo.innerHTML = "";deffotostiker=fotostiker.src;Content.style = "opacity:1;margin-top:16vh;";
+  const body = document.querySelector("body");const swalst = Swal.mixin({timer: 2300, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageHeight: 90,}); audio = new Audio('' + linkmp3.innerHTML);const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', imageHeight: 80,}); const style = document.createElement('style'); var today = new Date();var dd = String(today.getDate()).padStart(2, '0');var mm = String(today.getMonth() + 1).padStart(2, '0');var yyyy = today.getFullYear();const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;
+  audio = new Audio('' + linkmp3.src); function berjatuhan() {const heart = document.createElement("div"); heart.className = "fas fa-snowflake"; heart.style.left = (Math.random() * 90)+"vw"; heart.style.animationDuration = (Math.random()*3)+2+"s"; body.appendChild(heart);} setInterval(function name(params) {var heartArr = document.querySelectorAll(".fa-snowflake"); if (heartArr.length > 100) {heartArr[0].remove()}},100);
+
+  document.getElementById("kadoIn").onclick = function() {if(fungsiAwal==0){audio.play();fungsiAwal=1;kadoIn.style="transition:all .8s ease;transform:scale(10);opacity:0";wallpaper.style="transform: scale(1.5);";ket.style="display:none";setTimeout(initengahan,300);setTimeout(inipesan,500)}}
+
+  function initengahan(){
+    kadoIn.style="display:none";ket.style="display:none";
+    Content.style = "opacity:1;margin-top:2vh";
+    bodyblur.style="opacity:.3";
+    wallpaper.style="transform: scale(1.5);";
+  }
+  
+  async function mulainama() {
+    bodyblur.style="opacity:.7";
+    wallpaper.style="transform: scale(1);";
+    fotostiker.style="display:inline-flex;";setTimeout(ftmuncul,200);
+    setTimeout(kethalo,500);setInterval(berjatuhan,400);
+  }
+  
+  function ftmuncul(){if(ftganti==0){fotostiker.src = deffotostiker;fotostiker.style="display:inline-flex;opacity:1;transform:scale(1)";}}
+  function fthilang(){fotostiker.style="display:inline-flex;opacity:1;transition:all .7s ease;transform:scale(.1)";}
+  function jjfoto(){fotostiker.style.animation="rto .8s infinite alternate";setInterval(berjatuhan,200);}
+  
+  function kethalo(){
+  new TypeIt("#halo", {
+  strings: ["" + vketikhalo], startDelay: 30, speed: 30, waitUntilVisible: true,
+  afterComplete: function(){
+    halo.innerHTML = vketikhalo;
+    setTimeout(bqmuncul,200);
+  },}).go();
+  }
+  
+  function bqmuncul(){bq.style = "position:relative;opacity:1;visibility:visible;transform: scale(1);transform: skew(-3deg, 0deg);-webkit-transform: skew(-3deg, 0deg);margin-top:0";mulaiketik1();fungsi=1;}
+  function bqhilang(){wallpaper.style="transform: scale(2);";bodyblur.style="opacity:.3";bq.style = "position:relative;transition:all .7s ease;";}
+
+  function tombol(){wallpaper.style="transform: scale(1);";Tombol.style="opacity:1;transform: scale(1);";fungsi=1}
+  document.getElementById("By").onclick = function() {if(fungsi==1){menuju();}}
+  async function menuju(){pesanwhatsapp = "*" + nama + "*" + " dan keluarga + mengucapkan Minal Aidzin Mohon Maaf Lahir Dan Batin ><";await swals.fire('OK!', 'Kirim pesan ke WhatsApp aku, ya!', 'success');window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;}
+  
+  vketik1=kalimat.innerHTML;kalimat.innerHTML = "";
+  function mulaiketik1(){
+  new TypeIt("#kalimat", {
+  strings: ["" + vketik1], startDelay: 400, speed: 50, cursor: false, deleteSpeed: 20, breakLines: false, waitUntilVisible: true, lifelike: true,
+  afterComplete: function(){
+    setTimeout(mulaiketik2,500);
+  },}).go();
+  }
+  vketik2=kalimatb.innerHTML;kalimatb.innerHTML = "";
+  function mulaiketik2(){
+  new TypeIt("#kalimatb", {
+  strings: ["" + vketik2], startDelay: 1, speed: 50, cursor: false, deleteSpeed: 20, breakLines: false, waitUntilVisible: true, lifelike: true,
+  afterComplete: function(){
+    tombol();
+  },}).go();
+  }  
+  
+  async function menuju(){pesanwhatsapp = "Iyaa " + "*" + nama + "*" + " mau kok kita jalan! ><";window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;}
+</script>
+    <!-- custom js -->
+    <script src="main.js"></script>
+</body>
+</html>
